@@ -1,4 +1,5 @@
 import Button from '@/components/shared/Button';
+import DotGrid from '@/components/DotGrid';
 
 interface CTAProps {
   title?: string;
@@ -19,7 +20,15 @@ export default function CTA({
 }: CTAProps) {
   return (
     <section id="contact" className="cta-section section">
-      <div className="container">
+      <DotGrid
+        dotSize={2}
+        gap={20}
+        baseColor="#b3f0e6"
+        activeColor="#00bfa5"
+        proximity={120}
+        className="cta-dot-grid"
+      />
+      <div className="container cta-container">
         <div className="cta-content">
           <h2 className="cta-title">{title}</h2>
           <p className="cta-description">{description}</p>

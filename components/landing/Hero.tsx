@@ -1,9 +1,18 @@
 import Button from '@/components/shared/Button';
+import DotGrid from '@/components/DotGrid';
 
 export default function Hero() {
   return (
     <section className="hero-section">
-      <div className="container">
+      <DotGrid
+        dotSize={2}
+        gap={20}
+        baseColor="#e0e7ff"
+        activeColor="#0066cc"
+        proximity={120}
+        className="hero-dot-grid"
+      />
+      <div className="container hero-container">
         <div className="hero-content">
           <h1 className="hero-headline">
             AI-Powered Radiology Workflow Governance for Healthcare Excellence

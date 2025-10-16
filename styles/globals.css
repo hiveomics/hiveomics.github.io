@@ -598,6 +598,20 @@ a:hover {
   min-height: 60vh;
   display: flex;
   align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-dot-grid {
+  position: absolute !important;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.3;
+}
+
+.hero-container {
+  position: relative;
+  z-index: 1;
 }
 
 @media (min-width: 768px) {
@@ -650,6 +664,25 @@ a:hover {
   gap: var(--spacing-md);
   justify-content: center;
   flex-wrap: wrap;
+}
+
+/* Hero section button overrides for better contrast on blue background */
+.hero-section .btn-outline {
+  background-color: transparent;
+  color: white;
+  border-color: white;
+}
+
+.hero-section .btn-outline:hover:not(:disabled) {
+  background-color: white;
+  color: var(--color-primary);
+  border-color: white;
+}
+
+.hero-section .btn-primary:hover:not(:disabled) {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: white;
+  color: white;
 }
 
 /* Features Section */
@@ -841,6 +874,20 @@ a:hover {
 .cta-section {
   background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-secondary-dark) 100%);
   color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-dot-grid {
+  position: absolute !important;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.3;
+}
+
+.cta-container {
+  position: relative;
+  z-index: 1;
 }
 
 .cta-content {
@@ -873,6 +920,19 @@ a:hover {
   gap: var(--spacing-md);
   justify-content: center;
   flex-wrap: wrap;
+}
+
+/* CTA section button overrides for better contrast on teal background */
+.cta-section .btn-primary:hover:not(:disabled) {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: white;
+  color: white;
+}
+
+.cta-section .btn-secondary:hover:not(:disabled) {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: white;
+  color: white;
 }
 
 /* ============================================================================
@@ -2087,5 +2147,70 @@ a:hover {
   .legal-highlight {
     border-color: black;
     background-color: white;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
   }
 }
