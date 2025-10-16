@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Navigation from './Navigation';
 import { SITE_CONFIG } from '@/lib/constants';
+import GradientText from '@/components/GradientText';
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -23,7 +24,15 @@ export default function Header() {
           {/* Logo */}
           <div className="logo">
             <Link href="/" aria-label={`${SITE_CONFIG.name} home`}>
-              <span className="logo-text">{SITE_CONFIG.name}</span>
+              <GradientText
+                colors={["#18cb7b", "#4079ff", "#18cb7b", "#4079ff", "#18cb7b"]}
+                animationSpeed={10}
+                showBorder={false}
+                className="logo-text"
+                >
+              {SITE_CONFIG.name}
+              </GradientText>
+              {/* <span className="logo-text">{SITE_CONFIG.name}</span> */}
             </Link>
           </div>
 
